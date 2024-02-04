@@ -1,0 +1,87 @@
+body {
+    background-color: #ffecf2;
+    font-family: 'Quicksand', sans-serif; /* Same font as no.html */
+    text-align: center;
+    margin: 20px;
+}
+
+/* gallery.css */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-photo {
+    max-width: 90%;
+    max-height: 70vh; /* Adjusted maximum height */
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* gallery.css */
+
+.lightbox-caption { color: #ff6b81; /* Match the tab text color */ font-size: 18px; /* Adjust font size as needed */ margin-top: 10px; font-family: 'Quicksand', sans-serif; /* Use the Quicksand font for a cute look */ text-align: center; /* Center the text */ }
+
+.lightbox-photo:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px; /* Adjusted margin for smaller screens */
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    background-color: #ffb6c1;
+    color: #ff6b81;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media screen and (max-width: 375px) {
+    .tab {
+        font-size: 14px; /* Adjusted font size for even smaller screens */
+        padding: 8px; /* Adjusted padding for even smaller screens */
+    }
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3x3 grid */
+    grid-gap: 20px;
+}
+
+.photo-item {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

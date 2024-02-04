@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Yes Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #c6f5d7; /* Light green background */
+            font-family: 'Quicksand', sans-serif; /* Cute font - You can replace with a Google Font of your choice */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .tabs-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px 0; /* Add some padding at the top for better spacing */
+            position: absolute; /* Position absolute to move it to the top */
+            top: 0; /* Align with the top of the viewport */
+        }
+        .tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 20px; /* Adjusted font size */
+            background-color: #72e672; /* Light green tab background */
+            color: #fff; /* White tab text */
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .tab:hover,
+        .active-tab {
+            background-color: #5da271; /* Darker green on hover or active */
+            color: #fff; /* White text on hover or active */
+            text-decoration: none; /* Remove underline on hover or active */
+        }
+       #messageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width */
+}
+
+#message img {
+    width: 20px; /* Set an exact pixel width for the image */
+    max-width: 100%; /* Set a maximum width relative to the parent container */
+    height: auto;
+    max-height: 150px; /* Adjust the max-height as needed */
+    border-radius: 20px; /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+    margin-left: 0; /* Reset the left margin */
+}
+
+
+        p {
+            font-size: 28px; /* Increase the font size */
+            color: #5da271; /* Cute green text color */
+            margin-top: 10px;
+            font-weight: bold; /* Make the text bold */
+        }
+        @media only screen and (max-width: 375px) {
+    .tab {
+        font-size: 14px; /* Adjust the font size for smaller screens */
+        padding: 8px; /* Adjust the padding for smaller screens */
+    }
+}
+
+    </style>
+    <!-- Link to Google Font - Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tabs-container">
+    <a href="index.html" class="tab main-tab" onclick="handleTabClick(this)">Main</a>
+    <a href="Gallery.html" class="tab" onclick="handleTabClick(this)">Gallery</a>
+    <a href="calendar.html" class="tab" onclick="handleTabClick(this)">Calendar</a>
+    <a href="game.html" class="tab settings-button" onclick="handleTabClick(this)">Game</a>
+</div>
+
+<!-- Inside the body tag -->
+<!-- Inside the body tag -->
+<div id="messageContainer">
+    <img src="yes.gif" alt="Yes GIF" style="width: 250px; max-width: 100%; height: auto; max-height: 250px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-left: 0;" />
+    <p>AWWWW BABYYGIRL YOU SAID YES I LOVEEEE YOUUUU </p>
+</div>
+
+
+
+<script>
+    function handleTabClick(tab) {
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function (tab) {
+            tab.classList.remove('active-tab');
+        });
+        tab.classList.add('active-tab');
+        setTimeout(() => {
+            window.location.href = tab.getAttribute('href');
+        }, 100);
+    }
+</script>
+
+</body>
+</html>

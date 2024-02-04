@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffecf2;
+    margin: 20px;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.tab {
+    margin: 10px;
+    padding: 10px 15px; /* Adjusted padding for smaller tabs */
+    background-color: #ffb6c1;
+    color: #ff6b81;
+    font-size: 14px; /* Adjusted font size for smaller tabs */
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab:hover,
+.active-tab {
+    background-color: #ff99aa;
+    color: #ff4d58;
+}
+
+.calendar-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Rest of your styles remain unchanged */
+
+
+.calendar-month {
+    margin-bottom: 20px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.special-date {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.special-date .heart-icon {
+    font-size: 24px;
+    color: #ff6b81;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup-content {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ff6b81;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-date-container-highlight {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day:hover .special-date {
+    background-color: transparent;
+}
+
+.calendar-day:hover .special-date .heart-icon {
+    color: white;
+}

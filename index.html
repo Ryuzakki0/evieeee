@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include the common stylesheet -->
+    <!-- Link to Google Font - Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="tabs-container">
+        <a href="#main" class="tab main-tab" onclick="handleTabClick(this)">Main</a>
+        <a href="gallery.html" class="tab" onclick="handleTabClick(this)">Gallery</a>
+        <a href="calendar.html" class="tab" onclick="handleTabClick(this)">Calendar</a>
+        <a href="#game" class="tab" onclick="handleTabClick(this)">Game</a>
+    </div>
+
+    <div id="messageContainer">
+        <div id="message">
+            <img src="bear.gif" alt="Cute Bear GIF" />
+            <p>Will you be my valentine?</p>
+        </div>
+    </div>
+
+    <div id="buttonContainer">
+        <button id="yesBtn" onclick="redirectToYes()">Yes</button>
+        <button id="noBtn" onclick="handleNoClick()">No</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
